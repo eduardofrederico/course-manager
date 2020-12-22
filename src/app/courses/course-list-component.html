@@ -12,13 +12,15 @@
 
 <table class="table table-striped">
     <thead>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Code</th>
-        <th>Release Date</th>
-        <th>Rating</th>
-        <th>Options</th>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Code</th>
+            <th>Release Date</th>
+            <th>Rating</th>
+            <th>Options</th>
+        </tr>
     </thead>
     <tbody>
         <tr *ngFor="let course of filteredCourses">
@@ -31,7 +33,8 @@
                 <app-star [rating]="course.rating"></app-star>
             </td>
             <td>
-                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2">Edit</a>
+                <button (click)="deleteById(course.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
